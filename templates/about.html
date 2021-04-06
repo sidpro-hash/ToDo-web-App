@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block style %}
+<style>
+.responsive {
+      width: 100%;
+      height: auto;
+    }
+    #bigImage{
+      display: block;
+      max-width: 80%;
+    }
+    #smallImage{
+      display: none;
+    }
+    h1{
+      text-align: center;
+    }
+    .Icontainer{
+      max-width:100%;
+      height:100%;
+      margin-left: 10%;
+    }
+    .Pcontainer{
+      padding: 0;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    .Pcontainer p{
+      text-align: justify;
+    }
+      /* black main index */
+      .main-index{
+        display: none;
+        font-family: Verdana,sans-serif;
+      }
+      div.main-index ul li a{
+        text-align: left;
+      }
+      @media only screen and (max-width: 700px) {
+        #bigImage{
+          display: none;
+        }
+        .Pcontainer{
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+        #smallImage{
+          display: block;
+        }
+      }
+      @media only screen and (max-width: 600px) {
+        div.main-index ul li a:link{
+          color:white;
+        }
+          div.main-index ul li a:visited{
+            color:white;
+          }
+          div.main-index ul li:hover a{
+            color:black;
+          }
+          .main-index{
+            background-color: black;
+          }
+          div.main-index ul li.active:hover a{
+            color: white;
+          }
+          .nested{
+            background-color: black;
+          }
+          div.main-index ul li.active ul#nest li a{
+            color:white;
+          }
+          div.main-index ul li.active ul#nest li:hover a{
+            color: black;
+          }
+        }
+      #home{
+        display: block;
+      }
+      /* black main index over */
+	 </style>
+{% endblock style %}
+{% block body %}
+	<div class="container my-3">
+		    <h1 class="title-of" style="text-align:center">ABOUT US</h1>
+			<div class="Pcontainer">
+			  <hr/>
+			  <span class="title-description"><b>Easy Learning</b></span>
+			  <p>Our content and resources are freely available and we prefer to keep it that way to encourage our
+				readers acquire as many skills as they would like to. We don't force our readers to sign up with
+				us or submit their details either. No preconditions and no impediments. Simply Easy Learning!</p>
+				<ul>
+				  <li>Collegeek practice easy learning. </li>
+				  <li>Collegeek has focus on simplicity.</li>
+				</ul>
+			  <p>While creating the site, we have tried to be thorough and we continually put our efforts to improve the quality of the content.</p>
+			  <span class="title-description"><b>Add a Link to Us</b></span>
+			  <p>If you want others to discover Collegeek, please add a link to us.</p>
+			  <p>To add a simple text link, insert the following HTML code on your site:</p>
+			  <div style="border:1px solid gray;padding:5px;width:100%;">
+				<span style="color:blue;">&lt;</span>a <span style="color:red;">href</span><span style="color:blue;">&equals;"https://www.collegeek.com/"</span>
+					<span style="color:blue;">&gt;</span>collegeek.com<span style="color:blue;">&lt;</span>/a<span style="color:blue;">&gt;</span></div><br/>
+			  <span class="title-description"><b>Founder</b></span>
+			</div><br/>
+
+			<div class="Icontainer">
+			  <img id="bigImage" class="responsive" src="{{url_for('static',filename='About_Collegeek.png')}}" alt="Founder of Collegeek">
+			</div>
+			<img id="smallImage" class="responsive" src="{{url_for('static',filename='About_Collegeek_mob.png')}}" alt="Founder of Collegeek">
+			
+	</div>
+{% endblock body %}
